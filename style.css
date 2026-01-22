@@ -3,18 +3,37 @@ box-sizing: border-box;
 }
 
 body {
+    display: None;
     margin: 0;
-    font-family: "Georgia", serif;
+    font-family:  "Georgia", serif;
     background: #f8f7f3;
     color: #3a3a3a;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden; /* Megakadályozza, hogy a kép miatt oldalra lehessen görgetni */
 }
 
 /* ---------------- KEPEK ---------------- */
+
 .corner {
-    position: absolute;
-    width: 600px;
+    position: fixed;
+    width: 50%;
     opacity: 0.6;
+    z-index: -1; /* Berakja a tartalom mögé, hogy ne takarja a szöveget/gombokat */
+    pointer-events: none; /* Átkattinthatóvá teszi, hogy ne zavarja a menüt */
 }
+
+/* Tablet és Desktop (pl. 768px felett) */
+@media (min-width: 768px) {
+    .corner {
+
+        width: 31%;
+            }
+    }
+}
+
+
 
 .corner.left {
     top: 0px;
@@ -23,9 +42,40 @@ body {
 }
 
 .corner.right {
-    bottom: 0px;
-    right: 0px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
     transform: rotate(180deg);
+    border: 2px solid red;
+
+}
+
+/* Tablet és Desktop (pl. 768px felett) */
+@media (min-width: 768px) {
+    .corner.right {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        transform: rotate(180deg);
+        border: 2px solid red;
+
+    }
+}
+}
+
+/* BOX */
+
+.box {
+    background: rgb(248, 247, 243,0.8); /* Fehér háttér, 80%-os átlátszósággal */
+    border-radius: 20px;                 /* Itt állítod be a lekerekítést */
+    padding: 30px;                       /* Távolság a szöveg és a box széle között */
+    margin: 20px auto;                   /* Külső távolság és középre igazítás */
+    max-width: 500px;                    /* Hogy ne legyen túl széles asztali gépen */
+    /*box-shadow: 0 4px 15px rgba(0,0,0,0.05)*/; /* Egy kis finom árnyék a mélységért */
+
+    /* Ha a háttérkép (corner) előtt akarod tartani */
+    position: relative;
+    z-index: 1;
 }
 
 /* -------- HAMBURGER -------- */
@@ -37,13 +87,13 @@ header {
 }
 
 .hamburger {
-    width: 32px;
+    width: 44px;
     cursor: pointer;
 }
 
 .hamburger span {
     display: block;
-    height: 3px;
+    height: 5px;
     background: #6b7b4a;
     margin: 7px 0;
     transition: 0.4s;
@@ -51,7 +101,7 @@ header {
 
 /* animált X */
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(7px, 7px);
+    transform: rotate(45deg) translate(9px, 8px);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -59,7 +109,7 @@ header {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(8px, -8px);
+    transform: rotate(-45deg) translate(9px, -8px);
 }
 
 /* -------- OLDALMENÜ -------- */
@@ -121,13 +171,15 @@ header {
 }
 
 h1 {
+    font-size: 28px;
     font-weight: normal;
     letter-spacing: 2px;
 }
 
 .names {
     font-size: 32px;
-    margin: 20px 0;
+    font-weight: bold;
+    margin: 20px auto;
 }
 
 .invite, .details, p {
@@ -137,18 +189,7 @@ h1 {
     margin: 20px auto;
 }
 
-/* -------- OLAJÁG -------- */
-.olive {
-    width: 120px;
-    height: 40px;
-    margin: 0 auto 30px;
-    background: url("https://upload.wikimedia.org/wikipedia/commons/5/5a/Olive_branch.png")
-    center / contain no-repeat;
-}
 
-.olive.small {
-    width: 80px;
-}
 
 /* -------- MOBIL FINOMÍTÁS -------- */
 @media (max-width: 600px) {

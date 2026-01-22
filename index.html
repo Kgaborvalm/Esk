@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <title>Esküvői Meghívó</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
+
+<img src="olive_branch_left.png" class="corner left">
 
 <header>
     <div class="hamburger" onclick="toggleMenu()">
@@ -17,33 +21,44 @@
 
 <nav class="side-menu" id="menu">
     <a href="index.html">Meghívó</a>
-    <a href="lakodalom.html">Lakodalom</a>
+    <a href="visszajelzes.html">Visszajelzés</a>
     <a href="naszajandek.html">Nászajándék</a>
-    <a href="tovabbi-tudnivalok.html">További tudnivalók</a>
+
 </nav>
 
 <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
 <main class="hero">
-    <div class="olive"></div>
 
-    <img src="olive_branch_left.png" class="corner left">
-    <img src="olive_branch_left.png" class="corner right">
+    <div class='box'>
+        <!--<h1>Esküvői Meghívó</h1>-->
+        <p class="names">Zelma & Gábor</p>
 
-    <h1>Esküvői Meghívó</h1>
-    <p class="names">Anna & Péter</p>
+        <p class="invite">
+            Szeretettel várunk Benneteket<br>
+            templomi esküvőnkre!
+        </p>
 
-    <p class="invite">
-        Szeretettel meghívunk Benneteket<br>
-        templomi esküvőnkre
-    </p>
+        <p class="details">
+            2026. május 16.<br>
+            14:00 óra<br>
+            Budaörsi Nepomuki Szent János templom
+        </p>
 
-    <p class="details">
-        2026. június 15.<br>
-        15:00 óra<br>
-        Szent István-templom
-    </p>
+        <div class="map-container">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.444212140864!2d18.960160175445058!3d47.461772497968646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741de22ea7e700b%3A0x4503f37d7436965a!2sBuda%C3%B6rsi%20Nepomuki%20Szent%20J%C3%A1nos-templom!5e0!3m2!1shu!2shu!4v1752415530255!5m2!1shu!2shu" width="200" height="100" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="countdown" id="countdown">
+                Visszaszámlálás az esküvőig: ...
+        </div>
+    </div>
 </main>
+
+<img src="olive_branch_left.png" class="corner right">
+
+
 
 <script src="menu.js"></script>
 </body>
