@@ -50,7 +50,12 @@ function updateCountdown() {
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
 
-    countdownElement.textContent = `Visszaszámlálás az esküvőig: ${days} nap, ${hours} óra, ${minutes} perc, ${seconds} másodperc`;
+    //countdownElement.textContent = `Visszaszámlálás az esküvőig: ${days} nap, ${hours} óra, ${minutes} perc, ${seconds} másodperc`;
+
+    // Példa a JS frissítésre a logikádon belül:
+    document.getElementById('days').innerText = days;
+    document.getElementById('hours').innerText = hours;
+    document.getElementById('minutes').innerText = minutes;
 }
 
 setInterval(updateCountdown, 1000);
