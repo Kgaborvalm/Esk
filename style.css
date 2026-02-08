@@ -5,6 +5,7 @@ box-sizing: border-box;
 body {
     display: None;
     margin: 0;
+    padding: 0;
     font-family:  "Georgia", serif;
     background: #f8f7f3;
     color: #3a3a3a;
@@ -71,8 +72,8 @@ body {
 .box {
     background: rgb(248, 247, 243,0.8); /* Fehér háttér, 80%-os átlátszósággal */
     border-radius: 20px;                 /* Itt állítod be a lekerekítést */
-    padding: 30px;                       /* Távolság a szöveg és a box széle között */
-    margin: 20px auto;                   /* Külső távolság és középre igazítás */
+    padding: 0px;                       /* Távolság a szöveg és a box széle között */
+    margin: 0px auto;                   /* Külső távolság és középre igazítás */
     max-width: 500px;                    /* Hogy ne legyen túl széles asztali gépen */
     /*box-shadow: 0 4px 15px rgba(0,0,0,0.05)*/; /* Egy kis finom árnyék a mélységért */
 
@@ -167,7 +168,10 @@ header {
     pointer-events: all;
 }
 
+
+
 /* -------- TARTALOM -------- */
+
 .hero, .content {
     text-align: center;
     padding: 100px 20px 80px;
@@ -178,6 +182,16 @@ h1 {
     font-weight: normal;
     letter-spacing: 2px;
 }
+
+/* A nevek helyére kerülő kép formázása */
+img.names {
+    width: 100%;          /* Kitölti a rendelkezésre álló szélességet */
+    max-width: 400px;     /* De ne legyen nagyobb 400px-nél (ezt állítsd be ízlés szerint) */
+    height: auto;         /* Megtartja az arányokat, nem torzul el */
+    display: block;       /* Megszünteti az alatta lévő üres pixeleket */
+    margin: 0 auto;       /* Középre igazítja a dobozon belül */
+}
+
 
 .names {
     font-size: 32px;
@@ -259,8 +273,8 @@ h1 {
 
 .countdown-wrapper {
     text-align: center;
-    margin: 40px auto;
-    padding: 20px;
+    margin: 0px auto;
+    padding: 0px;
 }
 
 .countdown-title {
