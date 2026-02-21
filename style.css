@@ -74,13 +74,23 @@ body {
     border-radius: 20px;                 /* Itt állítod be a lekerekítést */
     padding: 0px;                       /* Távolság a szöveg és a box széle között */
     margin: 0px auto;                   /* Külső távolság és középre igazítás */
-    max-width: 500px;                    /* Hogy ne legyen túl széles asztali gépen */
+    max-width: 86vw;                    /* Hogy ne legyen túl széles asztali gépen */
     /*box-shadow: 0 4px 15px rgba(0,0,0,0.05)*/; /* Egy kis finom árnyék a mélységért */
 
     /* Ha a háttérkép (corner) előtt akarod tartani */
     position: relative;
     z-index: 1;
 }
+
+/* Tablet és Desktop (pl. 768px felett) */
+@media (min-width: 768px) {
+    .box {
+       max-width: 55vw;
+       margin-top: 12vh;
+
+    }
+}
+
 
 /* -------- HAMBURGER -------- */
 header {
@@ -175,6 +185,8 @@ header {
 .hero, .content {
     text-align: center;
     padding: 100px 20px 80px;
+
+
 }
 
 h1 {
@@ -186,12 +198,11 @@ h1 {
 /* A nevek helyére kerülő kép formázása */
 img.names {
     width: 100%;          /* Kitölti a rendelkezésre álló szélességet */
-    max-width: 400px;     /* De ne legyen nagyobb 400px-nél (ezt állítsd be ízlés szerint) */
+    /*max-width: 400px;     /* De ne legyen nagyobb 400px-nél (ezt állítsd be ízlés szerint) */
     height: auto;         /* Megtartja az arányokat, nem torzul el */
     display: block;       /* Megszünteti az alatta lévő üres pixeleket */
     margin: 0 auto;       /* Középre igazítja a dobozon belül */
 }
-
 
 .names {
     font-size: 32px;
@@ -199,8 +210,15 @@ img.names {
     margin: 20px auto;
 }
 
+img.ag {
+    width: 15%;
+    height: auto;         /* Megtartja az arányokat, nem torzul el */
+
+    flex: 0 0 auto
+}
+
 .invite, p {
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.7;
     max-width: 600px;
     margin: 20px auto;
@@ -215,7 +233,32 @@ img.names {
     margin: 20px auto;
     font-weight: 600; /* Extra vastag (ha a betűtípus támogatja) */
     font-style: italic; /* Dőlt betű */
+
 }
+
+a.details {
+
+    text-decoration: none;    /* Eltünteti az aláhúzást */
+    color: #3a3a3a;           /* Beállítja a saját színedet (pl. narancs) */
+    font-weight: 600;        /* Vastagabbá teheted, hogy kitűnjön */
+
+
+
+
+}
+
+/* Hogy ne legyen lila a kattintás után */
+a.details:visited {
+    color: #3a3a3a !important;           /* Maradjon az eredeti színed */
+}
+
+/* Amikor ráviszed az egeret */
+a.details:hover {
+    color: #c70039;           /* Sötétebb szín */
+    text-decoration: underline; /* Itt visszahozhatod az aláhúzást, ha szeretnéd */
+}
+
+
 
 
 .countdown {
@@ -243,6 +286,8 @@ img.names {
     /*width: 100%;             /* Kitölti a rendelkezésre álló helyet */
     margin-bottom: 50px; /* 50 pixel üres hely az elem után */
 }
+
+.container > *
 .map iframe {
     border-radius: 15px;    /* Legyen ez is lekerekített, mint a boxod! */
     width: 100%;            /* Kitölti a rendelkezésre álló szélességet */
@@ -259,8 +304,11 @@ img.names {
         font-size: 22px;
     }
 
-    .invite, .details, p {
+    .invite {
         font-size: 16px;
+    }
+    .details, p {
+        font-size: 14px;
     }
 
     .box{
@@ -337,7 +385,7 @@ img.names {
     }
 
     .countdown-title {
-        font-size: 20px;
+        font-size: 16px;
     }
 }
 
